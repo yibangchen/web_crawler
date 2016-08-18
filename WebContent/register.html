@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Register page</title>
+
+<style>
+	
+	#formdiv{
+		width: 300px;
+		margin: auto;
+	}
+	
+	#registerForm{
+		width: 100%;
+	}
+	
+	form#registerForm label{
+		margin: 5px;
+		padding: 5px;
+		text-align: left;
+	}
+	
+	form#registerForm input{
+		margin: 5px;
+		padding: 5px;
+		text-align: left;
+	}
+	
+	#header{
+		height: 50px;
+		margin-top: 10px;
+		text-align: center;
+	}
+	
+	.hiddenmessage{
+		display: none;
+	}
+	
+	.visiblemessage{
+		display: block;
+		height: 50px;
+		margin-top: 10px;
+		text-align: center;
+		color: red;
+	}
+	
+</style>
+
+<script type="text/javascript">
+	
+	window.onload = hashcheck;
+	
+	function hashcheck(){
+		var hash = window.location.hash;
+		
+		if(typeof hash != undefined){
+		
+			if(hash!=""){
+				if(hash === "#error"){
+					var elem = document.getElementById("error");
+					
+					if(typeof elem !=undefined){
+						elem.className = "visiblemessage";
+					}
+				}
+				
+				if(hash === "#success"){
+					
+					var elem = document.getElementById("success");
+					var div = document.getElementById("formdiv");
+					if(typeof elem !=undefined){
+						elem.className = "visiblemessage";
+						div.className = "hiddenmessage";
+					}
+				}
+			}
+		}
+	}
+	
+</script>
+
+
+</head>
+<body>
+
+<div id="header"  class="header">
+	Please register an account:
+</div>
+
+<div id="error" class="hiddenmessage">
+	Error occurred. Please retry.
+</div>
+<div id="success" class="hiddenmessage">
+	Success! Please <a href="xpath">log in</a>
+</div>
+
+<div id="formdiv" class="formdivclass" align="center">
+
+<form action="registerServlet" method="POST" name="registerform" id="registerForm">
+	
+<label for="username">User Name</label>	<input type="text" name="username" required /><br />
+<label for="password">Password</label>	<input type="password" name="password" required /><br />
+	<input type="submit" name="submit" value="Submit" /> 
+	<!-- <input type="reset" name="reset" value="Reset" /> -->
+</form>
+
+</div>
+
+</body>
+</html>

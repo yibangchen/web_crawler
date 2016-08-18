@@ -1,0 +1,25 @@
+
+User
+Channel
+UserChannelMap
+ChannelXmlMap
+
+Robot
+HtmlDocument
+XmlDocument
+CrawlHistory	- VisitedListEntity
+Crawler
+
+DatabaseWrapper
+
+To-Do list:
+change name - homeServlet
+	change dynamically changing table content: S.No.	Channel Name	Action
+1. ServletUI.Html 	- change "username" type to "username"; - check dependencies
+	line 102 - XPathHandler
+	line 106 - allchannels (servlet)
+	line 115 - xpath (servlet)
+
+2. Utils.fetchDataAsString - change name
+
+home servlet - where?

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+  <web-app xmlns="http://java.sun.com/xml/ns/javaee" 
+             version="2.5" 
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+             xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+             
+   <display-name>Channel Subscription Servlets</display-name>
+   <context-param>
+     <param-name>BDBstore</param-name>
+     <param-value>database</param-value>
+   </context-param>
+    
+   <servlet>
+     <servlet-name>xpath</servlet-name>
+     <servlet-class>edu.upenn.cis455.servlet.XPathServlet</servlet-class> 
+   </servlet>
+    
+   <servlet-mapping>
+     <servlet-name>xpath</servlet-name>
+     <url-pattern>/xpath</url-pattern>
+   </servlet-mapping>  
+
+   <!-- add any additional servlets and servlet mappings here -->
+   
+   <servlet>
+     <servlet-name>XPathHandler</servlet-name>
+     <servlet-class>edu.upenn.cis455.servlet.XPathHandler</servlet-class> 
+   </servlet>
+    
+   <servlet-mapping>
+     <servlet-name>XPathHandler</servlet-name>
+     <url-pattern>/XPathHandler</url-pattern>
+   </servlet-mapping>  
+   
+   <servlet>
+     <servlet-name>LoginHandler</servlet-name>
+     <servlet-class>edu.upenn.cis455.servlet.LoginServlet</servlet-class> 
+   </servlet>
+    
+   <servlet-mapping>
+     <servlet-name>LoginHandler</servlet-name>
+     <url-pattern>/loginhandler</url-pattern>
+   </servlet-mapping>  
+   
+   <servlet>
+     <servlet-name>AllChannelHandler</servlet-name>
+     <servlet-class>edu.upenn.cis455.servlet.ChannelServlet</servlet-class> 
+   </servlet>
+    
+   <servlet-mapping>
+     <servlet-name>AllChannelHandler</servlet-name>
+     <url-pattern>/allchannels</url-pattern>
+   </servlet-mapping>  
+   
+   <servlet>
+     <servlet-name>RegisterServlet</servlet-name>
+     <servlet-class>edu.upenn.cis455.servlet.RegisterServlet</servlet-class> 
+   </servlet>
+    
+   <servlet-mapping>
+     <servlet-name>RegisterServlet</servlet-name>
+     <url-pattern>/registerServlet</url-pattern>
+   </servlet-mapping>
+
+<!--    <servlet-mapping>
+    <servlet-name>default</servlet-name>
+    <url-pattern>*.html</url-pattern>
+   </servlet-mapping>
+ -->   
+
+</web-app>

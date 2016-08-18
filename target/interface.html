@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Check XPath</title>
+
+<style>
+	.bodydiv{
+		margin: 30px;
+		
+	}
+	
+	#loginform{
+		margin: 30px;
+		float: left;
+	}
+	
+	#header{
+		height:50px;
+	}
+	
+	form#login{
+		padding: 20px;
+		width: 300px;
+	}
+	
+	form#login input{
+		padding-botton: 20px;
+		line-height: 30px;
+		margin-bottom: 8px;
+		text-align: right;
+		
+	}
+	
+	form#login label{
+		text-align: right;
+		
+	}
+	
+	div#btns input{
+		line-height: 20px;
+		padding-right: 10px;
+		text-align: center;
+		
+	}
+	
+	.errorhidden{
+		display:none;
+	}
+	
+	.errorvisible{
+		display:block;
+	}
+	
+		
+
+</style>
+
+<script type="text/javascript">
+window.onload = checkerror;
+function checkerror(){
+	hash = window.location.hash;
+	if(hash!=""){
+		if(hash === "#error"){
+			var elem = document.getElementById("loginError");
+			elem.className="errorvisible";
+		}
+	}
+}
+</script>
+
+
+</head>
+<body>
+<h3>Yibang Chen</h3>
+<h3>PennID: yibang@seas.upenn.edu</h3>
+
+<div id="bodyContent" align="center">
+	<a href="allchannels">Display All Channels</a>
+	<a href="registerServlet">Register New Account</a>
+</div>
+
+<div id="body" class="bodydiv" align="center">
+	<div id="loginForm" class="logindiv">
+		<div id="loginError" class="errorhidden">
+			<p>Incorrect username and/or password</p>
+		</div>
+
+		<form action="loginServlet" method="POST" id="login">
+			<label for="username">UserName</label>
+			<input type="text" name="username" id="username" required/><br />
+
+			<label for="password">Password</label>
+			<input type="password" name="password" id="password" required /><br />
+			
+			<div id="btns"><input type="submit" value="Submit" class="submitbtn"/></div>
+		</form>
+	</div>
+</div>
+
+<div align="center">
+	<form action="XPathHandler" method="POST">
+	
+	<label for="xpath">xPaths</label>
+	<input type="text" name="xpath" id="xpath" placeholder="separate by ';'" required /><br />
+	
+	<label for="url">URL</label>
+	<input type="text" name="url" id="url" required /><br />
+	<br /><br />
+	<input type="submit" name="submit" value="Submit"/>
+	</form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>My Channel</title>
+<style>
+	#channelTable{
+		float: left;
+		width: 50%;
+	}
+		
+	#createnew{
+		float: right;
+		width: 50%;
+	}
+	
+</style>
+
+</head>
+<body>
+
+<div id="header">
+
+</div>
+
+<div id="body" >
+
+	<div id="createnew">
+	<h3>Create new channel:</h3>
+		<form action="createchannel" method="POST">
+			
+			<label for="channelname">Channel Name</label><input type="text" name="channelname" /><br />
+			<label for="channelpaths">xPaths</label><input type="text" name="channelpaths" /><br />
+			<label for="channelstylesheet">Stylesheet URL</label><input type="url" name ="channelstylesheet" /><br />
+
+			<input type="submit" value="Create New" name="submit" />
+	 	</form>
+	</div>
+
+	<div id="channelTable">
+	<h3>List of my channels</h3><br />
+		%%REPLACE TABLE HERE%%
+	</div>
+</div>
+
+</body>
+</html>
